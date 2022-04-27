@@ -1,0 +1,24 @@
+{
+  "name": "team_profile_generator",
+  "version": "1.0.0",
+  "description": "Section 10 (OOP) assignment/challenge. We have been asked to build a Node.js CL application that takes in information about employees on a software engineering team, then generates an HTML webpage that displays summaries for each person. This will also require that we utilize tests to ensure our code is working and maintaibable.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AuraFly/Team_Profile_Generator.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AuraFly/Team_Profile_Generator/issues"
+  },
+  "homepage": "https://github.com/AuraFly/Team_Profile_Generator#readme",
+  "dependencies": {
+    "inquirer": "^8.2.3",
+    "jest": "^28.0.2"
+  }
+}
