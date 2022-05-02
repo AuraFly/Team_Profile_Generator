@@ -111,7 +111,7 @@ const init =  async () => {
     }
 };
 
-function genMgr(mgr) {
+function genMgrCard(mgr) {
     const mgrCard =
     `<div class='container has-text-centered'>
     <div class='columns is-mobile'>
@@ -150,7 +150,7 @@ function genMgr(mgr) {
                 <ul class='infoUl'>
                 <li id="li1" >${mgr.getId()}</li>
                 <li id="li2" >${mgr.getEmail()}</li>
-                <li id="li3" >${mgr.getOfficeNumber()}</li>
+                <li id="li3" >${mgr.getofficeNumber()}</li>
             </div>
             </div>
         </div>
@@ -162,7 +162,7 @@ function genMgr(mgr) {
 rdyCards.push(mgrCard);
 };
 
-function genEng(eng) {
+function genEngCard(eng) {
     const engCard =
     `<div class='container has-text-centered'>
     <div class='columns is-mobile'>
@@ -201,7 +201,7 @@ function genEng(eng) {
                 <ul class='infoUl'>
                 <li id="li1" >${eng.getId()}</li>
                 <li id="li2" >${eng.getEmail()}</li>
-                <li id="li3" >${eng.getOfficeNumber()}</li>
+                <li id="li3" >${eng.getGithub()}</li>
             </div>
             </div>
         </div>
@@ -213,7 +213,7 @@ function genEng(eng) {
     rdyCards.push(engCard);
     };
 
-    function genInt(int) {
+    function genIntCard(int) {
         const intCard =
         `<div class='container has-text-centered'>
         <div class='columns is-mobile'>
@@ -252,7 +252,7 @@ function genEng(eng) {
                     <ul class='infoUl'>
                     <li id="li1" >${int.getId()}</li>
                     <li id="li2" >${int.getEmail()}</li>
-                    <li id="li3" >${int.getOfficeNumber()}</li>
+                    <li id="li3" >${int.getSchool()}</li>
                 </div>
                 </div>
             </div>
@@ -290,7 +290,7 @@ function genHTML() {
     
         <div class="columns" id="cardcolumns">
     
- ${INSERT FINAL CARDS HERE}
+${rdyCards}
     
         </div>
         
@@ -302,7 +302,7 @@ function genHTML() {
         </section>
     
     </body>
-    </html>``
+    </html>`
 };
 
 init();
