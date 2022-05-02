@@ -1,0 +1,58 @@
+/* TESTED STYLING ON TEST HTML - WILL BE USED WHEN FINISHED */
+
+html, body {
+    background-color: #475991;
+    background-image: linear-gradient(74deg, #475991 0%, #801880 100%);
+    height: 100%;
+    margin: 0;
+}
+
+.hero {
+    background-color: #e3e4ff;
+    margin-left: 20px;
+    margin-right: 20px;
+    border-radius: 0px 0px 20px 20px;
+    border: black solid 3px;
+}
+
+.container {
+    margin-top: 50px;
+    border: #e3e4ff solid 15px;
+    max-width: 300px;
+}
+
+.title {
+    color: black;
+    text-align: center;
+}
+
+.media {
+    border: black solid 2px;
+    border-radius: 7px;
+    background-color: #e3e4ff;;
+}
+
+.infoUl {
+    border: black solid 2px;
+    border-radius: 7px;
+    background-color: #e3e4ff;;
+}
+
+#li1, #li2, #li3 {
+    list-style: none;
+}
+
+.image {
+    border: black solid 2px;
+    border-radius: 7px;
+}
+
+
+#cardcolumns {
+}
+
+.footer {
+    background-color: #475991;
+    background-image: linear-gradient(74deg, #475991 0%, #801880 100%);
+    color: black;
+}

@@ -120,7 +120,7 @@ function genMgrCard(mgr) {
         <div class="card-image">
             <figure class="image is-2by1">
             <img src=
-    "./Assets/IMG/mgr.jpg"
+    "../Assets/IMG/mgr.jpg"
                 alt="employee">
             </figure>
         </div>
@@ -129,7 +129,7 @@ function genMgrCard(mgr) {
             <div class="media-left">
                 <figure class="image is-48x48">
                 <img src=
-    "./Assets/IMG/mgricn.png"
+    "../Assets/IMG/mgricn.png"
                     alt="mgricon">
                 </figure>
             </div>
@@ -148,9 +148,9 @@ function genMgrCard(mgr) {
             <div class='content'>
             <div class="media-content">
                 <ul class='infoUl'>
-                <li id="li1" >${mgr.getId()}</li>
-                <li id="li2" >${mgr.getEmail()}</li>
-                <li id="li3" >${mgr.getofficeNumber()}</li>
+                <li id="li1" >ID: ${mgr.getId()}</li>
+                <li id="li2" ><a href="mailto:${mgr.getEmail()}">Contact</a></li>
+                <li id="li3" >Office Number: ${mgr.getofficeNumber()}</li>
             </div>
             </div>
         </div>
@@ -171,7 +171,7 @@ function genEngCard(eng) {
         <div class="card-image">
             <figure class="image is-2by1">
             <img src=
-    "./Assets/IMG/eng.jpg"
+    "../Assets/IMG/eng.jpg"
                 alt="employee">
             </figure>
         </div>
@@ -180,7 +180,7 @@ function genEngCard(eng) {
             <div class="media-left">
                 <figure class="image is-48x48">
                 <img src=
-    "./Assets/IMG/engicn.png"
+    "../Assets/IMG/engicn.jpg"
                     alt="engicon">
                 </figure>
             </div>
@@ -199,9 +199,9 @@ function genEngCard(eng) {
             <div class='content'>
             <div class="media-content">
                 <ul class='infoUl'>
-                <li id="li1" >${eng.getId()}</li>
-                <li id="li2" >${eng.getEmail()}</li>
-                <li id="li3" >${eng.getGithub()}</li>
+                <li id="li1" >ID: ${eng.getId()}</li>
+                <li id="li2" ><a href="mailto:${eng.getEmail()}">Contact</a></li>
+                <li id="li3" >Github: <a href="https://github.com/${eng.getGithub()}">GitHub Profile</a></li>
             </div>
             </div>
         </div>
@@ -222,7 +222,7 @@ function genEngCard(eng) {
             <div class="card-image">
                 <figure class="image is-2by1">
                 <img src=
-        "./Assets/IMG/int.jpg"
+        "../Assets/IMG/int.jpg"
                     alt="employee">
                 </figure>
             </div>
@@ -231,7 +231,7 @@ function genEngCard(eng) {
                 <div class="media-left">
                     <figure class="image is-48x48">
                     <img src=
-        "./Assets/IMG/inticn.png"
+        "../Assets/IMG/inticn.png"
                         alt="inticon">
                     </figure>
                 </div>
@@ -250,9 +250,9 @@ function genEngCard(eng) {
                 <div class='content'>
                 <div class="media-content">
                     <ul class='infoUl'>
-                    <li id="li1" >${int.getId()}</li>
-                    <li id="li2" >${int.getEmail()}</li>
-                    <li id="li3" >${int.getSchool()}</li>
+                    <li id="li1" >ID: ${int.getId()}</li>
+                    <li id="li2" ><a href="mailto:${int.getEmail()}">Contact</a></li>
+                    <li id="li3" >School: ${int.getSchool()}</li>
                 </div>
                 </div>
             </div>
@@ -265,6 +265,7 @@ function genEngCard(eng) {
         };
 
 function genHTML() {
+    const html =
     `<!DOCTYPE html>
     <html lang="en">
         <head>
@@ -272,7 +273,7 @@ function genHTML() {
             <meta name="viewport" content="width=device-width, initial-scale=1.0" />
             <meta http-equiv="X-UA-Compatible" content="ie=edge" />
             <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
-            <link rel="stylesheet" href="./Assets/CSS/style.css" />
+            <link rel="stylesheet" href="../Assets/CSS/style.css" />
             <script src="https://kit.fontawesome.com/54da991eb7.js" crossorigin="anonymous"></script>
             <title>Team Portfolio Generator</title>
         </head>
@@ -290,7 +291,7 @@ function genHTML() {
     
         <div class="columns" id="cardcolumns">
     
-${rdyCards}
+${rdyCards.join(" \n")}
     
         </div>
         
@@ -302,7 +303,16 @@ ${rdyCards}
         </section>
     
     </body>
-    </html>`
+    </html>`;
+
+    fs.writeFile(
+        './dist/team.html',
+        html,
+        (err) => {
+        err ? console.error(err) : console.log('Created "team.html" successfully')
+    })
 };
+
+const pic 
 
 init();
