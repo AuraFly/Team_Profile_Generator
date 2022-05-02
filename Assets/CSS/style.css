@@ -16,14 +16,26 @@ html, body {
 }
 
 .container {
-    margin-top: 50px;
-    border: #e3e4ff solid 15px;
-    max-width: 300px;
+    padding: 15px;
+    background-color:  #e3e4ff;
+    border-radius: 7px;
+    width: 300px;
+    margin-top: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+    box-shadow: rgba(0, 0, 0, 0.25)
+     0px 54px 55px, rgba(0, 0, 0, 0.12)
+      0px -12px 30px, rgba(0, 0, 0, 0.12)
+       0px 4px 6px, rgba(0, 0, 0, 0.17)
+        0px 12px 13px, rgba(0, 0, 0, 0.09)
+         0px -3px 5px;
 }
 
 .title {
     color: black;
     text-align: center;
+    font-family: 'Raleway', sans-serif;
+    font-size: 50px;
 }
 
 .media {
@@ -36,19 +48,28 @@ html, body {
     border: black solid 2px;
     border-radius: 7px;
     background-color: #e3e4ff;;
+    color: black;
+    font-weight: bolder;
+    margin-left: 0px;
+}
+
+.media-content {
+    margin-left: -32px
 }
 
 #li1, #li2, #li3 {
     list-style: none;
 }
 
-.image {
+#mnimg {
     border: black solid 2px;
     border-radius: 7px;
 }
 
 
 #cardcolumns {
+    margin-top: 50px;
+    justify-content: space-evenly;
 }
 
 .footer {

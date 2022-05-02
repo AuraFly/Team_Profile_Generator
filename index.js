@@ -274,7 +274,9 @@ function genHTML() {
             <meta http-equiv="X-UA-Compatible" content="ie=edge" />
             <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
             <link rel="stylesheet" href="../Assets/CSS/style.css" />
-            <script src="https://kit.fontawesome.com/54da991eb7.js" crossorigin="anonymous"></script>
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@600&display=swap" rel="stylesheet">
             <title>Team Portfolio Generator</title>
         </head>
     
@@ -283,7 +285,7 @@ function genHTML() {
         <section class="hero">
             <div class="hero-body">
             <h1 class="title">
-                Organization
+                My Team
             </h1>
             </div>
         </section>
@@ -312,7 +314,5 @@ ${rdyCards.join(" \n")}
         err ? console.error(err) : console.log('Created "team.html" successfully')
     })
 };
-
-const pic 
 
 init();
