@@ -5,7 +5,7 @@ const Manager = require('./lib/Manager');
 const Intern = require('./lib/Intern');
 
 var employees = [];
-
+var rdyCards = [];
 const empQuestions = [
     {
         type: 'input',
@@ -62,7 +62,7 @@ function genMgr(info) {
         info.officeNumber
         );
     employees.push(mgr);
-    genMgrCard();
+    genMgrCard(mgr);
   }
 
   function genEng(info) {
@@ -73,7 +73,7 @@ function genMgr(info) {
            info.github
         );
     employees.push(eng);
-    genEngCard();
+    genEngCard(eng);
   }
 
   function genInt(info) {
@@ -84,7 +84,7 @@ function genMgr(info) {
            info.school
         );
     employees.push(int);
-    genIntCard();
+    genIntCard(int);
   };
 
 const init =  async () => {
@@ -101,7 +101,8 @@ const init =  async () => {
         const answersAgain = answers;
         if (answersAgain.done === 'No') {
             console.log(employees);
-            genCards(employees);
+            console.log(rdyCards)
+            genHTML()
         } else {
             init();
         }
@@ -110,54 +111,158 @@ const init =  async () => {
     }
 };
 
-function genCards = ({
-    plchldr
-}) =>
-`<div class='container has-text-centered'>
-<div class='columns is-mobile'>
-  <div class='column'>
-    <div class="card">
-      <div class="card-image">
-        <figure class="image is-2by1">
-          <img src=
-"${imageforrole}"
-               alt="employee">
-        </figure>
-      </div>
-      <div class="card-content">
-        <div class="media">
-          <div class="media-left">
-            <figure class="image is-48x48">
-              <img src=
-"${iconhere}"
-                 alt="Placeholder image">
+function genMgr(mgr) {
+    const mgrCard =
+    `<div class='container has-text-centered'>
+    <div class='columns is-mobile'>
+    <div class='column'>
+        <div class="card">
+        <div class="card-image">
+            <figure class="image is-2by1">
+            <img src=
+    "./Assets/IMG/mgr.jpg"
+                alt="employee">
             </figure>
-          </div>
-
-          <div class="media-content">
-            <p class="title is-5">
-              ${EmployeeNameHere}
-            </p>
-
-            <p class="subtitle is-6">
-            ${EmployeeRoleHere}
-            </p>
-          </div>
         </div>
+        <div class="card-content">
+            <div class="media">
+            <div class="media-left">
+                <figure class="image is-48x48">
+                <img src=
+    "./Assets/IMG/mgricn.png"
+                    alt="mgricon">
+                </figure>
+            </div>
 
-        <div class='content'>
-          <div class="media-content">
-            <ul class='infoUl'>
-              <li id="li1" >${EmployeeIDHere}</li>
-              <li id="li2" >${EmployeeEMAILHere}</li>
-              <li id="li3" >${EmployeeGIT/OFFICE/SCHOOLHere}</li>
-          </div>
+            <div class="media-content">
+                <p class="title is-5">
+                ${mgr.getName()}
+                </p>
+
+                <p class="subtitle is-6">
+                ${mgr.getRole()}
+                </p>
+            </div>
+            </div>
+
+            <div class='content'>
+            <div class="media-content">
+                <ul class='infoUl'>
+                <li id="li1" >${mgr.getId()}</li>
+                <li id="li2" >${mgr.getEmail()}</li>
+                <li id="li3" >${mgr.getOfficeNumber()}</li>
+            </div>
+            </div>
         </div>
-      </div>
+        </div>
     </div>
-  </div>
-</div>
-</div>`
+    </div>
+    </div>`
+
+rdyCards.push(mgrCard);
+};
+
+function genEng(eng) {
+    const engCard =
+    `<div class='container has-text-centered'>
+    <div class='columns is-mobile'>
+    <div class='column'>
+        <div class="card">
+        <div class="card-image">
+            <figure class="image is-2by1">
+            <img src=
+    "./Assets/IMG/eng.jpg"
+                alt="employee">
+            </figure>
+        </div>
+        <div class="card-content">
+            <div class="media">
+            <div class="media-left">
+                <figure class="image is-48x48">
+                <img src=
+    "./Assets/IMG/engicn.png"
+                    alt="engicon">
+                </figure>
+            </div>
+    
+            <div class="media-content">
+                <p class="title is-5">
+                ${eng.getName()}
+                </p>
+    
+                <p class="subtitle is-6">
+                ${eng.getRole()}
+                </p>
+            </div>
+            </div>
+    
+            <div class='content'>
+            <div class="media-content">
+                <ul class='infoUl'>
+                <li id="li1" >${eng.getId()}</li>
+                <li id="li2" >${eng.getEmail()}</li>
+                <li id="li3" >${eng.getOfficeNumber()}</li>
+            </div>
+            </div>
+        </div>
+        </div>
+    </div>
+    </div>
+    </div>`
+    
+    rdyCards.push(engCard);
+    };
+
+    function genInt(int) {
+        const intCard =
+        `<div class='container has-text-centered'>
+        <div class='columns is-mobile'>
+        <div class='column'>
+            <div class="card">
+            <div class="card-image">
+                <figure class="image is-2by1">
+                <img src=
+        "./Assets/IMG/int.jpg"
+                    alt="employee">
+                </figure>
+            </div>
+            <div class="card-content">
+                <div class="media">
+                <div class="media-left">
+                    <figure class="image is-48x48">
+                    <img src=
+        "./Assets/IMG/inticn.png"
+                        alt="inticon">
+                    </figure>
+                </div>
+        
+                <div class="media-content">
+                    <p class="title is-5">
+                    ${int.getName()}
+                    </p>
+        
+                    <p class="subtitle is-6">
+                    ${int.getRole()}
+                    </p>
+                </div>
+                </div>
+        
+                <div class='content'>
+                <div class="media-content">
+                    <ul class='infoUl'>
+                    <li id="li1" >${int.getId()}</li>
+                    <li id="li2" >${int.getEmail()}</li>
+                    <li id="li3" >${int.getOfficeNumber()}</li>
+                </div>
+                </div>
+            </div>
+            </div>
+        </div>
+        </div>
+        </div>`
+        
+        rdyCards.push(intCard);
+        };
 
 function genHTML() {
     `<!DOCTYPE html>
@@ -174,13 +279,13 @@ function genHTML() {
     
     <body>
         <header>
-          <section class="hero">
+        <section class="hero">
             <div class="hero-body">
-              <h1 class="title">
+            <h1 class="title">
                 Organization
-              </h1>
+            </h1>
             </div>
-          </section>
+        </section>
         </header>
     
         <div class="columns" id="cardcolumns">
