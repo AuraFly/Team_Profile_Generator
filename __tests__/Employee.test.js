@@ -3,9 +3,9 @@ const Employee = require('../lib/Employee');
 describe("Employee", () => {
     //testing Employee class functionality through series of tests/descriptions
     describe('Initialization', () => {
-        it("Should create object containing NAME/EMAIL/ID 'STRING/NUMBER/STRING' when called with new keyword", () => {
+        it("Should create object containing NAME/EMAIL/ID 'STRING/NUMBER/STRING' when called with 'new' keyword", () => {
             //Setting class definitions to use for test
-            const employee = new Employee('John', '123', 'JDoe@Gmail.com');
+            const employee = new Employee('John', 123, 'JDoe@Gmail.com');
 
             //Stating that the test should expect the const set to 'Employee' class should equal
             //the definitions set above when the property is called.
@@ -13,7 +13,7 @@ describe("Employee", () => {
             expect(employee.name).toEqual("John");
 
             //id called--
-            expect(employee.id).toEqual("123");
+            expect(employee.id).toEqual(123);
 
             //email called--
             expect(employee.email).toEqual("JDoe@Gmail.com");
