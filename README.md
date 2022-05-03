@@ -20,7 +20,7 @@ Section 10 (OOP) assignment/challenge. I have been asked to build a Node.js CL a
   Navigate to the project directory using a terminal and run 'node index.js'. This will kick off the inquirer script that will ask several questions about the employee and repeat as long
   as the user answers "yes" to having another employee to add. Once "No" is answered an html will be generated with cards showing the employees information labeled as "team.html".
 
-  ![Example Screenshot](./assets/IMG/SS2.jpg)
+  ![Example Screenshot](./Assets/IMG/SS2.jpg)
 
   Link to video tutorial:
   [Video Tutorial](https://drive.google.com/file/d/1_hmPkTCVQOQvbsp3kG3aQYVLWa3Jfj6L/view?usp=sharing)
@@ -28,7 +28,7 @@ Section 10 (OOP) assignment/challenge. I have been asked to build a Node.js CL a
   # Tests
   4 Test suites made for each class 'Employee, Manager, Engineer, and Intern'
   Each suite tests the class properties and methods and ensures they function as expected when called.
-  ![Example Screenshot](./assets/IMG/SS3.jpg)
+  ![Example Screenshot](./Assets/IMG/SS3.jpg)
 
 
   # Contribution
