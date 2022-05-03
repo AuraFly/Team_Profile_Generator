@@ -23,7 +23,7 @@ describe("Engineer", () => {
         expect(engineer.github).toEqual('JohnDeer');
     });
 
-    //testing Manager class methods
+    //testing Engineer class methods
     it("Should return defined properties when methods are used", () => {
         //Setting class definitions to use for test
         const engineer = new Engineer ('John', 123, 'JDoe@Gmail.com', 'JohnDeer');

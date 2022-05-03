@@ -1,11 +1,15 @@
+//importing classes and required modules
 const inquirer = require('inquirer');
 const fs = require('fs');
 const Engineer = require('./lib/Engineer');
 const Manager = require('./lib/Manager');
 const Intern = require('./lib/Intern');
 
+// arrays used for card creation. 'employees' array is not fully utilized, but is present for a future idea.
 var employees = [];
 var rdyCards = [];
+
+//Inquirer questions. Github/OfficeNumber/School are only asked if Engineer/Manager/Intern are selected.
 const empQuestions = [
     {
         type: 'input',
@@ -54,6 +58,7 @@ const empQuestions = [
     },
 ];
 
+//Functions that takes the info passed from "Init" and creates new objects utilizing the specified class.
 function genMgr(info) {
     const mgr = new Manager (
         info.name,
@@ -63,30 +68,32 @@ function genMgr(info) {
         );
     employees.push(mgr);
     genMgrCard(mgr);
-  }
+};
 
-  function genEng(info) {
+function genEng(info) {
     const eng = new Engineer (
         info.name,
-         info.id,
-          info.email,
-           info.github
+        info.id,
+        info.email,
+        info.github
         );
     employees.push(eng);
     genEngCard(eng);
-  }
+};
 
-  function genInt(info) {
+function genInt(info) {
     const int = new Intern (
         info.name,
-         info.id,
-          info.email,
-           info.school
+        info.id,
+        info.email,
+        info.school
         );
     employees.push(int);
     genIntCard(int);
-  };
+};
 
+// init will fire the inquirer questions and provides if statements to pass the provided info into the role functions listed above whenever they are finished being asked.
+// if the user answers yes, it repeats, if the user answers no it generates the html.
 const init =  async () => {
     console.log('Please answer the following questions:')
     try {
@@ -100,8 +107,7 @@ const init =  async () => {
         }
         const answersAgain = answers;
         if (answersAgain.done === 'No') {
-            console.log(employees);
-            console.log(rdyCards)
+            console.log('Thank you. One moment as the HTML is generated.')
             genHTML()
         } else {
             init();
@@ -111,6 +117,7 @@ const init =  async () => {
     }
 };
 
+//function takes the class data and passes it into an HTML template and then puts it into an array.
 function genMgrCard(mgr) {
     const mgrCard =
     `<div class='container has-text-centered'>
@@ -162,6 +169,7 @@ function genMgrCard(mgr) {
 rdyCards.push(mgrCard);
 };
 
+//function takes the class data and passes it into an HTML template and then puts it into an array.
 function genEngCard(eng) {
     const engCard =
     `<div class='container has-text-centered'>
@@ -213,6 +221,7 @@ function genEngCard(eng) {
     rdyCards.push(engCard);
     };
 
+    //function takes the class data and passes it into an HTML template and then puts it into an array.
     function genIntCard(int) {
         const intCard =
         `<div class='container has-text-centered'>
@@ -264,6 +273,7 @@ function genEngCard(eng) {
         rdyCards.push(intCard);
         };
 
+//function takes the array of data that the above functions populate and then inserts it into the final HTML template. Then finally writes to an HTML file called "team.html"
 function genHTML() {
     const html =
     `<!DOCTYPE html>
@@ -311,7 +321,7 @@ ${rdyCards.join(" \n")}
         './dist/team.html',
         html,
         (err) => {
-        err ? console.error(err) : console.log('Created "team.html" successfully')
+        err ? console.error(err) : console.log('Created "team.html" successfully! Check the dist directory.')
     })
 };
 
